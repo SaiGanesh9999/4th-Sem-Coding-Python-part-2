@@ -1,0 +1,17 @@
+import math
+t=int(input())
+while(t>0):
+    a,b=map(int,input().split())
+    b=b+1
+    l=[1]*b
+    x=int(math.sqrt(b))
+    l[0]=l[1]=0
+    for i in range(2,x+1):
+        if l[i]==1:
+            for j in range(i*i,b,i):
+                l[j]=0
+    c=0
+    for i in range(a,b):
+        if l[i]==1:
+            c=c+1
+    print(c)
